@@ -76,7 +76,6 @@ if user_input:
         games = api.get_games(real_sid)
 
         if games:
-            # Далі йде той самий код обробки ігор, що був раніше
             df = pd.DataFrame(games)
             df['hours'] = (df['playtime_forever'] / 60).round(1)
             df = df.sort_values(by='hours', ascending=False).head(5)
